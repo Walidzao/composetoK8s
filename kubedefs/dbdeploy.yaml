@@ -19,10 +19,10 @@ spec:
         image: walidzaouch/mysqldb
         resources:
           requests:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "256m"
           limits:
-            memory: "256Mi"
+            memory: "512Mi"
             cpu: "500m"
         ports:
         - containerPort: 3306
