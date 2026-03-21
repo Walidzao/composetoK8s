@@ -1,10 +1,8 @@
-version: '3.8'
 services: 
     db01:
       build:
         context: ./Docker-files/db
       image: walidzaouch/mysqldb
-      container_name: mysqldb
       ports: 
         - "3306:3306"
       volumes:
@@ -14,13 +12,12 @@ services:
 
     cache01:
       image: memcached
-      container_name: cache01
       ports: 
         - "11211:11211"
 
     mq01:
       image: rabbitmq
-      container_name: mq01
+
       ports: 
         - "5672:5672"
       environment:
@@ -29,21 +26,19 @@ services:
 
     app01:
       build:
-        context: ./Docker-files/app
+        context: .
+        dockerfile: ./Docker-files/app/Dockerfile
       image: walidzaouch/javaapp
-      container_name: javaapp
       ports: 
         - "8080:8080"
-      volumes:
-        - appdata:/usr/local/tomcat/webapps
-
-
-
+      depends_on: 
+        - db01
+        - cache01
+        - mq01
     web01:
       build:
         context: ./Docker-files/web
       image: walidzaouch/webapp
-      container_name: webapp01
       ports: 
         - "80:80"
 
