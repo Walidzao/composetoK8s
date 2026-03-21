@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-app
+  labels:
+    app: tomcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      initContainers:
+        - name: init-mydb
+          image: busybox:1.28 # nslookup is used with service names
+          command: ['sh', '-c', "until nslookup vprodb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
+        - name: init-mycache
+          image: busybox:1.28
+          command: ['sh', '-c', "until nslookup vprocache01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
+        - name: init-memcached
+          image: busybox:1.28
+          command: ['sh', '-c', "until nslookup vpromq01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
+      containers: 
+      - name: tomcat
+        image: vprocontainers/vprofileapp
+        ports:
+        - containerPort: 8080
+          name: tomcat-port
+        resources: 
+          requests: 
+            cpu: "250m"
+            memory: "64Mi"
+          limits: 
+            cpu: "500m"
+            memory: "128Mi"

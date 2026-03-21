@@ -1,0 +1,5 @@
+[submodule "kube-manifests"]
+	path = kube-manifests
+	url = https://github.com/Walidzao/vprofile-project.git
+	branch = skelkube
+	shallow = true

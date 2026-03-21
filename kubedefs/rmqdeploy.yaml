@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-rmq
+  labels:
+    app: rmq # not important: the service is where we map the host name or the address
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rmq
+  template:
+    metadata:
+      labels:
+        app: rmq # pod level definition in the template
+    spec:
+      containers:
+      - name: rabbit-mq #comtainer name
+        image: rabbitmq #image name 
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "256m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5672
+          name: rmq-port
+        env: 
+        - name: RABBITMQ_DEFAULT_USER
+          value: guest
+        - name: RABBITMQ_DEFAULT_PASS
+          valueFrom: 
+            secretKeyRef:
+              name: app-secret
+              key: rmq-pass
+        

@@ -1,0 +1,21 @@
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: proj-ingress
+  annotations: 
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: prod.wzops.de #
+    http:
+      paths:
+      - path: / #means : just the host as is 
+        pathType: Prefix
+        backend:
+          service:
+            name: prodapp-svc
+            port:
+              number: 8080
+ 

@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-db
+  labels:
+    app: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: vprocontainers/vprofiledb
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "256m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3306
+          name: db-port
+        volumeMounts:
+        - name: db-data-volume
+          mountPath: /var/lib/mysql 
+        env: 
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom: 
+            secretKeyRef: 
+              name: app-secret
+              key: db-pass
+      volumes:
+      - name: db-data-volume
+        persistentVolumeClaim:
+          claimName: db-pv-claim
+      initContainers: 
+      # any new partition in linux creates lost+found : in the EBS volume storage
+      # we need to remove it before mysql starts
+      - name: init-db
+        image: busy-box:latest
+        args: ["rm", "-rf",  "/var/lib/mysql/lost+found"]
+        volumeMounts:
+        - name: db-data-volume
+          mountPath: /var/lib/mysql
+        

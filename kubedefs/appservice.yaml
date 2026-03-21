@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prodapp-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: tomcat # we need to specify the pod name not the deployment name 
+  ports:
+    - port: 8080
+      targetPort: tomcat-port
+      protocol: TCP
