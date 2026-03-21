@@ -26,7 +26,7 @@ spec:
           command: ['sh', '-c', "until nslookup vpromq01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
       containers: 
       - name: tomcat
-        image: vprocontainers/vprofileapp
+        image: walidzaouch/javaapp
         ports:
         - containerPort: 8080
           name: tomcat-port

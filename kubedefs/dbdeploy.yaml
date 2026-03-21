@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: db
-        image: vprocontainers/vprofiledb
+        image: walidzaouch/mysqldb
         resources:
           requests:
             memory: "128Mi"
