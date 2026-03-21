@@ -44,7 +44,7 @@ spec:
       # any new partition in linux creates lost+found : in the EBS volume storage
       # we need to remove it before mysql starts
       - name: init-db
-        image: busy-box:latest
+        image: busybox:latest
         args: ["rm", "-rf",  "/var/lib/mysql/lost+found"]
         volumeMounts:
         - name: db-data-volume
