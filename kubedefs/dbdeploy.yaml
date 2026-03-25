@@ -6,6 +6,8 @@ metadata:
     app: db
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: db
@@ -32,10 +34,12 @@ spec:
           mountPath: /var/lib/mysql 
         env: 
         - name: MYSQL_ROOT_PASSWORD
-          valueFrom: 
-            secretKeyRef: 
+          valueFrom:
+            secretKeyRef:
               name: app-secret
               key: db-pass
+        - name: MYSQL_ROOT_HOST
+          value: "%"
       volumes:
       - name: db-data-volume
         persistentVolumeClaim:
