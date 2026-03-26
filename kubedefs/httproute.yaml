@@ -1,0 +1,17 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: prod-route
+spec:
+  parentRefs:
+  - name: prod-gateway
+  hostnames:
+  - prod.wzops.de
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: prodapp-svc
+      port: 8080
