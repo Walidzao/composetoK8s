@@ -8,4 +8,4 @@ spec:
   resources:
     requests:
       storage: 3Gi
-  storageClassName: standard # Optional: uses default if omitted
+  storageClassName: default # Optional: uses default if omitted
