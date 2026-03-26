@@ -2,14 +2,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <title>WZOPS | Germany DevOps Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="WZOPS provides DevOps services across Germany, including CI/CD, Kubernetes, cloud automation, observability, and platform reliability consulting.">
+    <link rel="icon" type="image/x-icon" href="${contextPath}/resources/Images/icons/favicon.ico"/>
+    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/profile.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/wzops-brand.css" rel="stylesheet">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
 	<link rel="stylesheet" href="${contextPath}/resources/css/w3.css">
 </head>
-<body>
+<body class="wzops-home">
 <div class="container-fluid">
     <nav class="navbar navbar-custom navbar-static-top" role="navigation" style="background-color: #e3f2fd;">
         <div class="container-fluid">
@@ -20,7 +28,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${contextPath}/index">WZOPS</a>
+                <a class="navbar-brand wzops-brand-link" href="${contextPath}/index">
+                    <img class="wzops-brand-mark" src="${contextPath}/resources/Images/branding/wzops-mark.svg" alt="WZOPS logo">
+                    <img class="wzops-brand-wordmark" src="${contextPath}/resources/Images/branding/wzops-wordmark.svg" alt="WZOPS">
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -41,11 +52,12 @@
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
   <img class="w3-image" src="${contextPath}/resources/Images/dev_img.jpeg" alt="Architecture" width="1500" height="800">
 </header>
-<div>
-<blockquote><p>
-     <h2 align="center" style="font-family: Verdana,sans-serif;color:#1C3B47;">WZOPS Germany DevOps Services</h2>
-     <h3 align="center" style="font-family: Verdana,sans-serif;color:#1C3B47;">CI/CD, Kubernetes, cloud automation, and platform reliability for modern delivery teams.</h3>
-</blockquote>
+<div class="w3-content w3-padding-32">
+    <blockquote>
+        <h2 align="center" style="font-family: Verdana,sans-serif;color:#1C3B47;">WZOPS Germany DevOps Services</h2>
+        <h3 align="center" style="font-family: Verdana,sans-serif;color:#1C3B47;">CI/CD, Kubernetes, cloud automation, and platform reliability for modern delivery teams.</h3>
+    </blockquote>
+</div>
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
 
@@ -128,13 +140,14 @@
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" align="center">CONTACT</h3>
     <div class="forms" id="contact-form">
     <p>Talk with WZOPS about Kubernetes delivery, CI/CD modernization, automation, observability, and cloud operations support.</p>
-    <form action="/action_page.php" id="action" target="_blank">
+    <p>Use the details above to reach us directly while the contact workflow is being integrated into the platform.</p>
+    <form action="#" id="action">
       <input class="w3-input" type="text" placeholder="Name" required name="Name">
       <input class="w3-input w3-section" type="text" placeholder="Email" required name="Email">
       <input class="w3-input w3-section" type="text" placeholder="Service Needed" required name="Subject">
       <input class="w3-input w3-section" type="text" placeholder="Project Scope" required name="Comment">
-      <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      <button class="w3-button w3-black w3-section" type="button" disabled title="Contact workflow pending backend integration">
+        <i class="fa fa-paper-plane"></i> CONTACT WORKFLOW COMING SOON
       </button>
     </form>
     </div>
@@ -148,5 +161,3 @@
 
 </body>
 </html>
-
-</body>

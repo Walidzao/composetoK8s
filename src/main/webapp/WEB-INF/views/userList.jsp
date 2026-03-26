@@ -9,6 +9,7 @@
     <!-- Stylesheets -->
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/profile.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/wzops-brand.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
@@ -72,7 +73,7 @@
         }
     </style>
 </head>
-<body>
+<body class="wzops-data">
     <div class="mainbody container-fluid">
         <div class="row">
             <div class="navbar-wrapper">
@@ -86,7 +87,10 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="${contextPath}/index">WZOPS</a>
+                                <a class="navbar-brand wzops-brand-link" href="${contextPath}/index">
+                                    <img class="wzops-brand-mark" src="${contextPath}/resources/Images/branding/wzops-mark.svg" alt="WZOPS logo">
+                                    <img class="wzops-brand-wordmark" src="${contextPath}/resources/Images/branding/wzops-wordmark.svg" alt="WZOPS">
+                                </a>
                             </div>
                             <div class="navbar-collapse collapse">
 

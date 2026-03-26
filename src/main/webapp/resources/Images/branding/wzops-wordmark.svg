@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 140" role="img" aria-labelledby="title desc">
+  <title id="title">WZOPS wordmark</title>
+  <desc id="desc">WZOPS Germany DevOps services wordmark</desc>
+  <defs>
+    <linearGradient id="brand-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="520" height="140" rx="24" fill="#f8fafc"/>
+  <g transform="translate(20 18)">
+    <path d="M44 0 82 22v44L44 88 6 66V22Z" fill="#0f172a"/>
+    <path d="M44 8 75 26v36L44 80 13 62V26Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+    <path d="M18 26h10l8 23 7-15h7l7 15 8-23h10L62 65H53l-6-13-6 13H31Z" fill="#f8fafc"/>
+    <path d="M18 68h52" stroke="url(#brand-accent)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(126 44)">
+    <text x="0" y="34" font-family="Poppins, Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="6" fill="#0f172a">WZOPS</text>
+    <text x="2" y="66" font-family="Poppins, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="3" fill="#1e3a5f">GERMANY DEVOPS SERVICES</text>
+    <path d="M2 82h220" stroke="url(#brand-accent)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

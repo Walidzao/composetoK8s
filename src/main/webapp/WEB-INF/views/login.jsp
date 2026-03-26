@@ -7,11 +7,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login</title>
+    <title>WZOPS | Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="${contextPath}/resources/images/icons/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="${contextPath}/resources/Images/icons/favicon.ico"/>
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -31,6 +31,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/util.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/wzops-brand.css">
     <style>
         /* Navbar Styling */
         .navbar-custom {
@@ -60,7 +61,7 @@
         }
     </style>
 </head>
-<body>
+<body class="wzops-auth">
 <div class="navbar-wrapper">
     <div class="container-fluid">
         <nav class="navbar navbar-custom navbar-static-top" role="navigation">
@@ -72,7 +73,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="${contextPath}/index">WZOPS</a>
+                    <a class="navbar-brand wzops-brand-link" href="${contextPath}/index">
+                        <img class="wzops-brand-mark" src="${contextPath}/resources/Images/branding/wzops-mark.svg" alt="WZOPS logo">
+                        <img class="wzops-brand-wordmark" src="${contextPath}/resources/Images/branding/wzops-wordmark.svg" alt="WZOPS">
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -91,6 +95,7 @@
                 <span class="login100-form-title p-b-49">
                     Login
                 </span>
+                <p class="text-center p-b-30">Access the WZOPS delivery workspace for cloud operations, automation, and platform reliability.</p>
 
                 <!-- Display error message if any -->
                 <c:if test="${not empty error}">

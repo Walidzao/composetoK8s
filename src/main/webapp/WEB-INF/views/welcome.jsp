@@ -9,13 +9,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Welcome</title>
+    <title>WZOPS | Welcome</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/bootstrap.min.css">
     <link href="${contextPath}/resources/css/profile.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/wzops-brand.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body class="wzops-dashboard">
 
 <div class="mainbody container-fluid">
     <div class="row">
@@ -32,10 +33,10 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <!-- Navbar Brand -->
-                            <a class="navbar-brand" href="#" style="margin-right: -8px; margin-top: -5px;">
-                                <img alt="Brand" src="${contextPath}/resources/Images/user/logo.png" width="30px" height="30px">
+                            <a class="navbar-brand wzops-brand-link" href="${contextPath}/index">
+                                <img class="wzops-brand-mark" alt="WZOPS logo" src="${contextPath}/resources/Images/branding/wzops-mark.svg">
+                                <img class="wzops-brand-wordmark" alt="WZOPS" src="${contextPath}/resources/Images/branding/wzops-wordmark.svg">
                             </a>
-                            <a class="navbar-brand" href="#">WZOPS</a>
                         </div>
                         <!-- Navbar Links -->
                         <div class="navbar-collapse collapse">
@@ -93,7 +94,7 @@
                                            </div>
                                            <!-- Logout form -->
                                           <!-- Logout Form -->
-                                          <form id="logoutForm" method="POST" action="${contextPath}">
+                                          <form id="dropdownLogoutForm" method="POST" action="${contextPath}/logout">
                                               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                                               <button type="submit" class="btn btn-default btn-sm pull-right">
                                                   <i class="fa fa-power-off" aria-hidden="true"></i> Sign Out
@@ -128,7 +129,7 @@
                             <p>WZOPS helps engineering teams across Germany improve release operations with CI/CD, Kubernetes, automation, and observability services that keep delivery fast and production reliable.</p>
                             <hr>
                             <h3><strong>Location</strong></h3>
-                            <p>Earth</p>
+                            <p>Germany</p>
                             <hr>
                             <h3><strong>Gender</strong></h3>
                             <p>Unknown</p>
@@ -161,8 +162,6 @@
                         </div>
                     </span>
 
-                      <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
                       <%
                           Authentication auth = SecurityContextHolder.getContext().getAuthentication();
                           String username = auth != null ? auth.getName() : "to WZOPS DevOps Hub";
@@ -176,11 +175,11 @@
                       <a href="#" class="tag">#Continuous Delivery</a>
                       <a href="#" class="tag">#Automation</a>
 
-                      <c>
+                      <div class="p-t-15">
                           <a href="${contextPath}/users" class="btn btn-success">All Users</a>
                           <a href="${contextPath}/user/rabbit" class="btn btn-success">RabbitMq</a>
                           <a href="#" class="btn btn-success">Elasticsearch</a>
-                      </c>
+                      </div>
 
                       <br><br><hr>
 
@@ -228,8 +227,8 @@
                     </span>
                     <hr>
                     <div class="post-content">
-                        <p>"The Key to DevOps Success."</p>
-                        <p>The Key to DevOps Success" Collaboration". Collaboration is essential to DevOps,yet how to do it is often unclear with many teams falling back on ineffective conference calls, instant messaging, documents, and SharePoint sites. In this keynote,we will share a vision for a next generation DevOps where collaboration, continuous documentation, and knowledge capture are combined with automation toolchains to enable rapid innovation and deployment.</p>
+                        <p>"Reliable delivery starts with operational clarity."</p>
+                        <p>WZOPS helps teams strengthen release pipelines by combining automation, platform standards, and shared delivery practices. The result is faster deployments, fewer handoff problems, and clearer ownership across build, test, and production operations.</p>
                     </div>
                     <hr>
                     <div>

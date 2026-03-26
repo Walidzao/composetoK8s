@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">WZOPS mark</title>
+  <desc id="desc">Hexagonal WZOPS DevOps logo mark</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <path d="M64 6 113 34v60l-49 28L15 94V34Z" fill="url(#bg)"/>
+  <path d="M64 18 103 41v46L64 110 25 87V41Z" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+  <path d="M32 39h14l10 29 9-19h10l9 19 10-29h14l-18 50H88L80 72l-8 17H50Z" fill="#f8fafc"/>
+  <path d="M29 92h70" stroke="url(#accent)" stroke-width="8" stroke-linecap="round"/>
+</svg>

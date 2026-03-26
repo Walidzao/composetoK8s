@@ -7,10 +7,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sign Up</title>
+    <title>WZOPS | Sign Up</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="${contextPath}/resources/images/icons/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="${contextPath}/resources/Images/icons/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/fonts/iconic/css/material-design-iconic-font.min.css">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/vendor/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/util.css">
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/main.css">
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/wzops-brand.css">
     <style>
         .navbar-custom {
             background: rgba(0, 0, 0, 0); /* Fully transparent */
@@ -50,14 +51,16 @@
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
-            color:red;
         }
     </style>
 </head>
-<body>
+<body class="wzops-auth">
     <!-- Navbar -->
     <nav class="navbar navbar-custom navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="${contextPath}/">WZOPS</a>
+        <a class="navbar-brand wzops-brand-link" href="${contextPath}/">
+            <img class="wzops-brand-mark" src="${contextPath}/resources/Images/branding/wzops-mark.svg" alt="WZOPS logo">
+            <img class="wzops-brand-wordmark" src="${contextPath}/resources/Images/branding/wzops-wordmark.svg" alt="WZOPS">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -72,6 +75,7 @@
             <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
                 <form:form modelAttribute="userForm" method="post" class="login100-form validate-form">
                     <span class="login100-form-title p-b-30">Sign Up</span>
+                    <p class="text-center p-b-30">Create your WZOPS workspace profile and join the DevOps delivery platform.</p>
 
                     <!-- Email field -->
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Email is required">
