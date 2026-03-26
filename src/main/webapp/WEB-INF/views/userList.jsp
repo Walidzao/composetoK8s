@@ -86,7 +86,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-                                <a class="navbar-brand" href="${contextPath}/index">HKH Infotech</a>
+                                <a class="navbar-brand" href="${contextPath}/index">WZOPS</a>
                             </div>
                             <div class="navbar-collapse collapse">
 
